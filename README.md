@@ -1,24 +1,10 @@
-# README
+# Me Regue - API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[pt-br]
 
-Things you may want to cover:
+## Sobre
 
-* Ruby version
+A documentação desse projeto está presente no [wiki](https://github.com/juliafealves/me_regue-api/wiki) e a documentação
+da API está no [link](https://app.swaggerhub.com/apis-docs/chicadigital/MeRegue/1.0.0).
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Como executar?
