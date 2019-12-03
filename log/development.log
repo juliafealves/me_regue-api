@@ -13,3 +13,72 @@ Migrating to CreatePlants (20191203151222)
   [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/plants" for ::1 at 2019-12-03 16:28:06 -0300
+  [1m[35m (18.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/plants"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/plants" for ::1 at 2019-12-03 16:29:05 -0300
+  
+SyntaxError (/Users/juliafealves/workspace/me_regue-api/app/controllers/api/v1/plants_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting '}'
+...S', message: 'Saved plant' data: plant}, status: :created
+...                           ^~~~
+/Users/juliafealves/workspace/me_regue-api/app/controllers/api/v1/plants_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting '}'
+...message: 'Plant not saved' data: plant.errors}, status: :unp...
+...                           ^~~~
+/Users/juliafealves/workspace/me_regue-api/app/controllers/api/v1/plants_controller.rb:11: syntax error, unexpected '}', expecting end
+... not saved' data: plant.errors}, status: :unprocessable_enti...
+...                              ^):
+  
+app/controllers/api/v1/plants_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/api/v1/plants_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/api/v1/plants_controller.rb:11: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/plants_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/api/v1/plants_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/api/v1/plants_controller.rb:11: syntax error, unexpected '}', expecting end
+Started POST "/api/v1/plants" for ::1 at 2019-12-03 16:29:57 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PlantsController#create as */*
+  Parameters: {"name"=>"Orquídea Roxo", "description"=>"Que plantinha linda!", "plant"=>{"name"=>"Orquídea Roxo", "description"=>"Que plantinha linda!"}}
+[31mUnpermitted parameter: :plant[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/plants_controller.rb:8:in `create'
+  [1m[36mPlant Create (21.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Orquídea Roxo"], ["description", "Que plantinha linda!"], ["created_at", "2019-12-03 19:29:57.275059"], ["updated_at", "2019-12-03 19:29:57.275059"]]
+  ↳ app/controllers/api/v1/plants_controller.rb:8:in `create'
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/plants_controller.rb:8:in `create'
+Completed 201 Created in 53ms (Views: 1.5ms | ActiveRecord: 36.2ms | Allocations: 5669)
+
+
+Started POST "/api/v1/plants" for ::1 at 2019-12-03 17:27:50 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PlantsController#create as */*
+  Parameters: {"nome"=>"Orquídea Roxo", "description"=>"Que plantinha linda!", "plant"=>{"description"=>"Que plantinha linda!"}}
+[31mUnpermitted parameters: :nome, :plant[0m
+Completed 422 Unprocessable Entity in 157ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 3665)
+
+
