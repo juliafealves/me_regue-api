@@ -11,6 +11,13 @@ class Api::V1::PlantsController < ApplicationController
     end
   end
 
+  # Destroy plant.
+  def destroy
+    plant = Plant.find(params[:id])
+    plant.destroy
+    render json: {status: 'SUCCESS', message:'Deleted plant', data: plant }, status: :ok
+  end
+
   # List all plants.
   def index
     plants = Plant.order('created_at DESC');
