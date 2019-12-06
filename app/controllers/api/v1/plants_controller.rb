@@ -11,6 +11,12 @@ class Api::V1::PlantsController < ApplicationController
     end
   end
 
+  # List all plants.
+  def index
+    plants = Plant.order('created_at DESC');
+    render json: {status: 'SUCCESS', message:'Successfully listed plants.', data: plants}, status: :ok
+  end
+
   # Updated a plant.
   def update
     plant = Plant.find(params[:id])
