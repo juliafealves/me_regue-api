@@ -17,6 +17,12 @@ class Api::V1::PlantsController < ApplicationController
     render json: {status: 'SUCCESS', message:'Successfully listed plants.', data: plants}, status: :ok
   end
 
+  # Show a plant by ID
+  def show
+    plant = Plant.find(params[:id])
+    render json: {status: 'SUCCESS', message:'Show a plant.', data: plant}, status: :ok
+  end
+
   # Updated a plant.
   def update
     plant = Plant.find(params[:id])
