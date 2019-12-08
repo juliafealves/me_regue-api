@@ -6,11 +6,10 @@ run Rails.application
 
 use Rack::Cors do
   allow do
-    orgins '*'
+    origins 'meregue.netlify.com'
     resource '*',
              :methods => [:get, :post, :delete, :put, :patch, :options, :head],
              :max_age => 600
-    # headers to expose
   end
 
   allow do
