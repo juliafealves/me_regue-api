@@ -6,14 +6,7 @@ run Rails.application
 
 use Rack::Cors do
   allow do
-    orgins 'meregue.netlify.com'
-    origins 'localhost:3000', '127.0.0.1:3000',
-            /\Ahttp:\/\/192\.168\.0\.\d{1,3}(:\d+)?\z/
-    # regular expressions can be used here
-    origins 'localhost:4200', '127.0.0.1:4200',
-            /\Ahttp:\/\/192\.168\.0\.\d{1,3}(:\d+)?\z/
-    # regular expressions can be used here
-
+    orgins '*'
     resource '*',
              :methods => [:get, :post, :delete, :put, :patch, :options, :head],
              :max_age => 600
